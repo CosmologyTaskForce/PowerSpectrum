@@ -1,0 +1,4 @@
+version=0.6.0
+typesetter=xelatex
+steps=texpdf
+root=/home/marvin/Nutstore/Store/Projects/HZ/PowerSpectrum/PowerSpectrum_Notes/TeX/PowerSpectrumNotes.tex

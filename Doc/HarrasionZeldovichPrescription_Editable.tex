@@ -1,0 +1,389 @@
+\documentclass{article}
+
+\usepackage{amsmath,amsthm,amsfonts,amssymb,bm}
+\addtolength{\textheight}{5.0cm}
+\addtolength{\voffset}{-3.5cm}
+\addtolength{\hoffset}{-2.5cm}
+\addtolength{\textwidth}{4.0cm}
+
+\allowdisplaybreaks
+
+\usepackage{subeqnarray}
+\usepackage{mathrsfs}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{url}
+\usepackage{ulem}
+\usepackage{indentfirst}
+%\usepackage{textcomp}
+%\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[hang,small,bf]{caption}
+\setlength{\captionmargin}{50pt}
+
+%includeonly{}
+
+
+\graphicspath{{Figures/}{Figures/CPL/}{Figures/DE/}{Figures/P/}}
+
+
+%\usepackage{tikz}
+%\usetikzlibrary{mindmap,trees}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\hrule\vspace{1pt}\hrule
+\begin{center}
+\mbox{{\bf Harrison Zeldovich Prescription}} \\
+\vspace{0.5em}
+\mbox{{Harrison(1970) \& Zeldovich(1972)}}
+\end{center}
+\hrule
+
+
+
+\section{Harrison Zeldovich Prescription}
+All perturbations that come into the horizon have the same amplitude.
+\begin{equation}
+\Delta(k_i,t_i)=\Delta(k_e,t_e)=\text{Const.} \label{HZP}
+\end{equation}
+
+\paragraph{Attention} $k=2\pi/L$ is the comoving wavenumber.
+
+
+
+
+
+
+
+\subsection{What does that mean? \& Evolution of This Prescription.}
+
+One kind of understanding of the assumption is
+\begin{enumerate}
+\item
+The perturbations are generated to be the same value (comoving value).
+
+\item
+When the perturbations are outside of the horizon, their comoving measurement do not evolve.
+
+\end{enumerate}
+
+However, this might be wrong (and it is wrong
+%footnote
+\footnote{Even the largest scale potential perturbations damp to $9/10$ of their original value.}
+%END footnote
+). This only gives us a intuitive inspiration. The only thing we know is \ref{HZP}.
+
+
+
+\vspace{2ex}
+\begin{quote}
+
+
+{\bf{Am I wrong?}}
+
+The assumption firstly used is $\delta_0=\beta_E N^{-n}$. Or equivalently, $\delta_0\propto L^{-3n}$. Since Harrison proved that there is a throshold epoch where the initial perturbations are located, all the perturbations generated at that epoch can be discribed as $\delta_0\sim L^{-3n} \sim k^{3n}$ and $n=\frac{2}{3}$. i.e., primiordial perturbations are $\delta_0\sim L_0^{-2}\sim a(t_H)^2/L_{H-physical}^2$. [$t_0$ denotes the time when the perturbation are generated. $t_H$ is the time of horizon crossing, i.e., $2ct_H=\lambda_H$.]
+
+\begin{quote}
+
+
+During RD, $a(t)^2=2\sqrt C t$, then $\delta_H\sim a(t_H)^2/t_H^2 \sim a(t_H)^2/a(t_H)^4 \sim 1/t_H$. The amplitude of the perturbations are time dependent because the moment of horizon crossing $t_H$ are different for different perturbations. So what are the mistakes here?
+\end{quote}
+
+
+If $\delta_H\sim k_H^2$ remains the same for all perturbations and $P(k_H)\sim k_H$, from the defination of another measurement of perturbations
+\begin{equation}\Delta(k)=\frac{k^3}{2\pi^2}P(k),
+\end{equation}
+we have $\Delta^2=\delta_H^2$ when the perturbation comes into the horizon ($k=\lambda_H$), which indicates \ref{HZP}.
+
+Generally speaking, one would choose the initial power spectrum to be power law form, i.e., $P(k)\propto k^n$, or evern more simple, scale free Zeldovich spectrum, $P(k)\propto k$.
+%%%%%%%%%%   Footnote     %%%%%%%%%%%
+\footnote{\begin{url} {http://fisica.usac.edu.gt/public/curccaf_proc/borganihtml/node5.html}
+\end{url}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\end{quote}
+
+
+\subsubsection{Primitive Spectrum}
+It is expected that $\Delta$ is scale free.
+The primitive spectrum given by inflation (or just a dimension analysis) is
+\begin{equation}
+P_\Phi(k)=\frac{50\pi^2}{9k^3}\bigg( \frac{k}{H_0} \bigg)^{\hat{n}-1}\delta_H^2\bigg(\frac{\Omega_m}{D_1(a=1)}\bigg)^2
+\end{equation}
+
+When $\hat{n}=1$, that is exact a scale invariant perturbation, i.e., $P(k)\sim k^{-3}$
+
+
+\begin{quote}
+THE PROBLEM IS, How do the orginal $\mu_0\sim L_0^{-3n}\sim k_0^2$ evolve to $P(k_0)\sim k_0$?
+\begin{eqnarray}
+P(k_0)\sim \mu_0^2/k_0^3 \sim k_0.
+\end{eqnarray}
+\end{quote}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
+
+
+%%%%%%%%%        #Harrison(1970)#          %%%%%%%%%%%%%%
+\section{Harrison(1970)}
+
+
+%%%%%%%%%%    ##Notations##     %%%%%%%%%%%%%
+
+\setcounter{section}{0}
+
+
+\subsection{Notations} 
+
+\begin{quote}
+0 subscript denotes the initial value \\
+* subscript denotes the threshold value \\
+$\mu=\delta\rho/\rho$ \\
+$L$ wavelength of perturbation  \\
+$N$  number of particles in the perturbed region, in which $N\propto L_0^3$  \\
+$\beta_E$ const. \\
+$\lambda_p$:$\rho=3m/4\pi\lambda_p^3$ interparticle distance. $mc^2$ is the mean particle energy. \\
+$\lambda_g=2GM/c^2$   \\
+$\lambda_H=ca/\dot a=2ct$  Hubble distance
+\end{quote}
+
+
+
+%%%%%%%%%%    ##Why##     %%%%%%%%%%%%%
+\subsection{Why $\mu_0\propto N^{-n}$}
+
+Many would think the perturbations might originated from the thermal fluction. Then $\delta=1/N$. However, this leads to weird phenomena, such as thermal fluctuations emerge suddenly in classical cosmology.
+
+Then they adopt $\delta_0=\beta_E N^{-n}$, whose origin can be push into era that classical cosmology can not reach by setting the initial time $t_0$ to be the threshold. And $\delta_0=\beta_E N^{-n}$ turns into the classical thermal fluctuation when $n=1/2$.
+
+\sout{Latter we'll see that the key point of this assumption lies in the arguement of the threshold epoch, $\lambda_H=\lambda_p=\lambda_g =\lambda^*$.
+}
+
+
+
+
+
+%%%%%%%%%%%     ##Assumptions##       %%%%%%%%%%%%
+
+\subsection{Assumptions}
+
+\begin{itemize}
+
+
+
+
+\item
+\begin{enumerate}
+
+\item Perturbed area can be treated with Friedmann model when $t<t_H$. [When $t$ is coming near $t_H$, the casual area we are studying (samller than Hubble distance) is becoming inhomogeneous.]
+
+\item Density perturbations: $\mu_0=\beta_E N^{-n}$
+
+\item $\mu_H$ should be larger than $\mu_m$. [Or the perturbations won't grow.]
+
+\end{enumerate}
+
+\item
+$t_0=t^*$ [
+Fluctuations in the metric at the threshold of classical cosmology. Thermal fluctions is not proper unless there are reasons for the suddenly emerge of thermal fluctuations.][Suppose we use an arbitary initial time. In classical cosmology, the origin of the fluctuations should be origined from the thermal fluctions. As a result of observations, the thermal fluctuations should suddenly emerge. This is weird in classical classical cosmology. Harrison promoted the idea of Wheeler.]
+
+
+\end{itemize}
+
+
+
+
+%%%%%%%%%%    ##Equations##     %%%%%%%%%%%%%
+\subsection{Equations}
+
+Early Friedmann models: $\mu=a\mu_0(t/t_0)^m$. [Radiation, $\rho a^4=const.$, $a^2=2Bt$. Or more directly, $\Delta^2(k,t)g(t)k^3/2\pi^3P(k)$, the growth factor $g(t)=g(t_0)(t/t_0)^{2/3}$ when $t_0>t_{eq}$ and $g(t)=g(t_0)$ when $t_0<t_{eq}$.]
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%      ##Why Threshold##       %%%%%%%%%%%%
+\setcounter{section}{1}
+\subsection{Why threshold?} 
+
+
+\begin{equation}
+\frac{\lambda_H}{\lambda_p}=(\frac{\lambda_p}{\lambda_g})^{1/2}
+\end{equation}
+
+Since $\lambda_H/\lambda_p \propto (t/m)^{1/3}$, $\lambda_H/\lambda_p$ and $\lambda_p/\lambda_g$ vanishes when $t\rightarrow 0$.
+
+Problem is, the continuous fluid models are valid under $\lambda_g \ll \lambda_p \ll \lambda_H$. Thus when $t$ is small enough, from former arguement we know there must be some critical time $2ct^*=\lambda^*$, in which $\lambda^*=\lambda_H=\lambda_p=\lambda_g$.
+
+That means, our classical model should start at $t^*$.
+
+%\vspace{0.5em}
+\begin{center}-----------------------------------------------------------\end{center}
+%\vspace{1em}
+\paragraph{More}
+Early universe, pressure $p=\rho/3$, scale factor $\dot a^2=1/a^2-k$, when $a$ is small, $k$ is negligible.
+
+Then solve $\rho$ by putting $a=\sqrt{2\sqrt{C}t}$
+%back into $\ddot a =-8\pi/3 \cdot a\rho$, we get 
+\begin{equation}
+\rho t^2=\frac{3}{32\pi G}
+\end{equation}
+
+Finally,$\dot a^2 =\frac{8\pi G}{3} \rho a^4 \frac 1 {a^2}=C\frac 1 {a^2}, \quad  t=(\lambda_p^3/4c^2\lambda_g)^{1/2}$.
+
+
+%%%%%%%%%%%%%   ##n=2/3##       %%%%%%%%%%%%    
+\subsection{$\bold{n=\frac{2}{3}}$ Law}
+Harrison used very weak constrains. The perturbed area should stay far away from be closed and $\mu_H$ should be much larger than $\mu_m$.
+\begin{itemize} 
+\item 
+Perturbations should not be too large because it has to ensure that the region is open on all scales ($r$), i.e., $\Gamma^2(r)<0$ for every $<r<L*$. 
+
+\vspace{2em}
+
+At the boundary $1-\Gamma_b^2=8\pi G \rho_0 \mu_0 R_0^2r_b^2/3=\beta_E N^{-n+2/3}t^*/t_0$ \footnote{Calculation:
+%%%%%%%%%%%%%%%%%%%%%Footnote
+A perturbed region,
+\begin{equation}
+\mathrm d s^2=\mathrm d\tau^2-S^2(\Gamma^{-2}\mathrm dr^2+r^2\mathrm d\Omega^2)
+\end{equation}
+\begin{equation}
+\Gamma^2=1-\kappa r^2
+\end{equation}
+
+
+{\color{red}{Note: Here $S$ is different from the background scale factor.}}
+
+\begin{equation}
+(\mathrm dS/\mathrm d\tau)^2=(C+\delta C)/S^2-\kappa   \label{deltaC}
+\end{equation}
+
+Go on with \ref{deltaC}, 
+\begin{subeqnarray}
+S_0^2\kappa/C=\delta C/C
+\end{subeqnarray}
+
+Initially, $\delta C=\delta (8\pi G\rho a_0^4/3)=(8\pi G a_0^4/3 \cdot \delta \rho_0) / (8\pi G a_0^4/3 \cdot  \rho_0)=\mu_0=\beta_E N^{-n}$,  [{\em{I am a little confused here.}}]
+
+In this way, \ref{deltaC} becomes
+\begin{subeqnarray}
+(\frac{\mathrm dS}{\mathrm d\tau})^2&=&C[(1+\frac{\delta C}{C})S^{-2}-\frac{\kappa}{C}] \\
+&=&C[(1+\mu_0)S^{-2}-\mu_0 a_0^{-2}]
+\end{subeqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%END Footnote
+}, thus 
+\begin{equation}
+n>\frac{2}{3}+\frac{\ln{\beta_E t^*/t_0}}{\ln{N}}
+\end{equation}
+
+
+
+
+\vspace{2em}
+\item $\mu$ has a minimium value $\mu_m\sim  10^{-2}$ at the end of radiation epoch in order to grow into galaxies.
+[When the Hubble distance is crossing with the perturbation area, the perturbation is subject to damping if it is small, i.e., if the perutrbation $\mu_H$ at $t_H$ is too small.\footnote{Reference or simple illustration. Read ref. 3}] Or to show that more clearly, 
+\begin{enumerate}
+\item 
+$\mu$ will damp after $t_H$.
+\item
+$\mu$ at the end of of Radiation Era should be larger than $\mu_m$.
+\end{enumerate}
+
+\vspace{2em}
+We have the perturbation at the crossing
+\begin{equation}\mu_H=2\beta_E N^{-n+2/3}t^*/3t_0,
+\end{equation}
+since
+\begin{eqnarray*}
+\mu_H&=&2\mu_0 t_H/3t_0=2\beta_E N^{-n} t_H/3t_0    \\
+t_H&=&t^* N^{2/3}.
+\end{eqnarray*}
+
+
+$\mu>\mu_m$ is valid if and only if
+\begin{equation}
+n<\frac 2 3+\frac{\ln{(2\beta_E t^*/3\mu_m t_0)}}{\ln N}
+\end{equation}
+
+\end{itemize}
+
+\vspace{2em}
+
+Finally, 
+\begin{equation}
+0<(n-\frac{2}{3})\ln N-\ln \beta_E<\ln{(2/3\mu_m)}
+\end{equation}
+
+$N$ is suffiently large, so for a wide range of $\beta_E$, $n\sim 2/3$.\footnote{
+%%%%%%%%%%%%%%%%%%%%Footnote
+$\beta_E$ is a constant, Why it should be small? Or why should it be of the magnitude of $\mu_m$?
+%%%%%%%%%%%%%%%%%%%END Footnote
+}
+
+
+
+
+\fi
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}

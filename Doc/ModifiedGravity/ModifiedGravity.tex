@@ -1,0 +1,308 @@
+% !TEX program = xelatex
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsthm,amsfonts,amssymb,bm}
+\usepackage[fleqn]{amsmath}
+\addtolength{\textheight}{5.0cm}
+\addtolength{\voffset}{-3.5cm}
+\addtolength{\hoffset}{-2.5cm}
+\addtolength{\textwidth}{4.0cm}
+
+%\allowdisplaybreaks
+
+%\usepackage{subeqnarray}
+\usepackage{mathrsfs}
+%\usepackage{color}
+%\usepackage{url}
+%\usepackage{ulem}
+\usepackage{indentfirst}
+%\usepackage{textcomp}
+%\usepackage{graphics}
+%\usepackage{graphicx}
+%\usepackage[hang,small,bf]{caption}
+%\setlength{\captionmargin}{50pt}
+
+
+
+%%Here is the configuration for chinese. 
+%\usepackage[cm-default]{fontspec}
+%\usepackage{xunicode}
+%\usepackage{xltxtra}
+%\setmainfont{AR PL UKai CN}
+%\setsansfont[BoldFont=SimHei]{KaiTi_GB2312}
+%\setmonofont{NSimSun}
+
+%\XeTeXlinebreaklocale "zh"
+%\XeTeXlinebreakskip = 0pt plus 1pt
+
+
+%\usepackage{tikz}
+%\usetikzlibrary{mindmap,trees}
+\usepackage{graphicx}
+%\usepackage[hang,small,bf]{caption}
+%\setlength{\captionmargin}{50pt}
+
+
+
+\begin{document}
+\title{Modifying Gravity - f(R) Gravity \\ Outline}
+\author{MA Lei}
+\maketitle
+
+\pagestyle{empty}
+
+\newcommand{\arXiv}{{\bf arXiv}}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\CN}{{\it Cosmologia Notebook - 2012-02}}
+\newenvironment{eqnset}
+{\begin{equation}\left \bracevert \begin{array}{l}}
+{\end{array} \right. \end{equation}}
+
+\newenvironment{eqn}
+{\begin{equation}\left \bracevert \begin{array}{l}}
+{\end{array} \right. \end{equation}}
+
+
+%%%%%%%%%%%%%%%%%%%%%Main Content%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\section{References \& Conventions}
+
+\paragraph{Reference:} \arXiv:astro-ph/0611321; \arXiv:1002.3868; \arXiv:astro-ph/9910176
+
+\paragraph{Conventions} \begin{itemize}
+\item
+$'=\frac{\partial }{\partial \tau}$
+\item
+$f\equiv f(R)$
+\item
+$f_R\equiv \frac{\partial f}{\partial R}$
+\item
+$\mathcal H = a'/a$
+\item
+$\mathrm ds^2 = a(\tau)^2(\mathrm d\tau^2 + \gamma_{ij}\mathrm dx^i\mathrm dx^j)$ is the line element used throughout this note.
+\item
+$R = \frac{6a''}{a^3}$ is the scalar curvature.
+\end{itemize}
+
+
+\section{Main Equations}
+
+\subsection{Jordan frame}
+
+
+Start from action
+
+
+\begin{eqn}
+S=\frac{1}{2\kappa^2} \int \mathrm d^4x\sqrt{-g}[R + f(R)] + \int\mathrm d^4 \sqrt{-g}\mathcal L_{(M)}(x_i,g_{\mu\nu})
+\end{eqn}
+
+Variation with respect to $g_{\mu\nu}$ of this action gives \footnote{The standard procedure is really complicate. Ohanian et al has a somewhat easier method in his book. The used a special set of coordinates. $g_{\mu\nu}=\eta_{\mu\nu} + \epsilon h_{\mu\nu}$, then things become easier. Palatini method should be done with another action.}
+\begin{eqn}
+(1+f_R)R_{\mu\nu} - \frac{1}{2} g_{\mu\nu}(R + f) + (g_{\mu\nu}\square - \nabla_\mu\nabla_\nu)f_R = \kappa^2 T_{\mu\nu}
+\end{eqn}
+Or
+\begin{eqn}
+(1+f_R)G_{\mu\nu} + \frac{1}{2} g_{\mu\nu}(f_R R - f) + (g_{\mu\nu}\square  - \nabla_\mu\nabla_\nu)f_R = \kappa^2 T_{\mu\nu}
+\end{eqn}
+
+
+\paragraph{Background} Background equations are
+\begin{eqnset}
+(1+r_R)\mathcal H^2 + \frac{a^2}{6}f - \frac{a''}{a}f_R + \mathcal H f_R' = \frac{\kappa^2}{3}a^2\rho \\
+\frac{a''}{a} - (1+f_R)\mathcal H^2 + a^2 \frac{f}{6} + \mathcal H f_R' + \frac{1}{2}f_R'' = -\frac{\kappa^2}{6}a^2(\rho + 3P)
+\end{eqnset}
+
+Unknown variables: $f$/$f_R$, $\HH$, $\rho$. $f$ should be given in a certain model.
+
+
+
+\paragraph{Perturbations}
+
+Metric
+
+\begin{eqnset}
+g_{00} = -a^2 (1 + 2A Y) \\
+g_{0i} = -a^2 B Y_i \\
+g_{ij} = a^2 (\gamma_{ij} + 2 H_L Y \gamma_{ij} + 2 H_T Y_{ij})
+\end{eqnset}
+
+$H_T$ is the anisotropic distortion of each constant time hypersurface. $H_L$ is the trace part.
+
+E-M tensor
+\begin{eqnset}
+T^0_{\phantom0 0} = -\rho (1+\delta Y) \\
+T^0_{\phantom0i} = (\rho + p) (v - B) Y_i \\
+T^i_{\phantom i 0} = -(\rho + p)v Y^i \\
+T^i_{\phantom i j} = [p\delta^i_j + \delta p\delta^i_j Y + \frac 3 2 (\rho +p)\sigma Y^i_j]=p[\gamma^i_{\phantom i j} + \pi_L \delta^i_{\phantom i j} + \pi_T Y^i_{\phantom i j}]
+\end{eqnset}
+
+$v$ is the potential of velocity, $v^i\equiv u^i/u^0=vY^i$.
+Subscripts T means tranverse, or simply traceless part.
+Subscripts L means Longitudinal, or trace part.
+
+
+Conservation equations (calculated from $T^{\phantom {(\lambda)}\nu}_{(\lambda)\phantom\nu \mu;\nu}${\footnote{Why the same with SGR? Actually I thought the conservation law should be something from the identity that $G_{ab}^{\phantom{ab};a}=0$. This DOESN'T lead to the conclustion that $T_{ab}^{\phantom{ab};a}=0$}. However we can define some kind of density and pressure and include these in the conservatioon equation. AND this won't affect my work since I don't really use this equation here. The conservation equation are derived in the way I stated here.})
+\begin{eqnset}
+\delta' + (1 + w)(kv + 3H_L') + 3\HH (\frac{\delta p}{\delta \rho} - w)\delta = 0    \\
+(v' - B) + \HH (1-3w)(v - B) + \frac{w'}{1+w}(v-B) - \frac{\delta p/\delta \rho}{1 + w}k^2\delta - k^2 A + \frac 2 3 k^2 \sigma =0
+\end{eqnset}
+Conservation equations themselves are not enough.
+
+
+We have the defination of $\delta R/Y$
+\begin{eqn}
+\frac{\delta R}{Y} = \frac{2}{a^2}\left[ -6\frac{a''}{a}A - 3\HH A' + k^2 A +kB' + 3k\HH B + 9\HH H_L' + 3H_L'' + 2k^2(H_L + \frac{H_T}{3}) \right] 
+\end{eqn}
+
+Using the standard procedure given by Kodama et al, we can find the perturbation equations. In \CN, Page 18.
+
+Also we can transform them into what they are in Synchronous Gauge. In \CN, Page 18, 19.
+
+
+
+
+\subsection{From Jordan Frame to Einstein Frame}
+
+\paragraph{Why this transformation}\arXiv:astro-ph/9910176 mentioned "Jordan frame formulation of a scalar-tensor theory is not viable because the energy density of the gravitational scalar field present in the theory is not bounded from below", thus violating the weak energy condition{\footnote{Weak energy condition: for timelike vector field $U^\alpha$, $\rho=T_{\alpha\beta}U^\alpha U^\beta>=0$}}. So I would like to work in Einstein frame though Einstein frame also has problems such as a violation of equivalence priciple{\footnote{equality of inertial mass and gravitational mass is equivalent to the assertion that the acceleration imparted to a body by a gravitational field is independent of the nature of the body, $m_I\cdot a = Grav\cdot m_G$.}}.
+
+Action in Jordan frame is given by
+\begin{eqn}
+S=\frac{1}{2\kappa^2} \int \mathrm d^4x\sqrt{-g}[R + f(R)] + \int\mathrm d^4 \sqrt{-g}\mathcal L_{(M)}(x_i,g_{\mu\nu})
+\end{eqn}
+
+Apply a gauge transformation
+\begin{eqn}
+\tilde g_{\mu\nu} = \Omega^2 g_{\mu\nu} ,
+\end{eqn}
+we get the action in Einstein frame.
+\begin{eqn}
+\tilde S = \frac{1}{2\kappa^2} \int \mathrm d^4 x \sqrt{-\tilde g}\tilde R + \int \mathrm d^4 x \sqrt{-\tilde g}[ -\frac 1 2 \tilde g^{\mu\nu}(\tilde \nabla_\mu \phi)(\tilde \nabla_\nu \phi) - V(\phi)] \\
+ + \int \mathrm d^4 x \sqrt{-\tilde g} e^{-2\beta \kappa \phi} \mathcal L_{(M)}(x_i, e^{-\beta \kappa \phi}\tilde g_{\mu\nu})
+\end{eqn}
+
+[ Definations of $V(\phi)$, $\beta$, $\phi$, $e^{-2\omega}$, $\Omega^2 \equiv e^{2\omega(x^\alpha)}$, in \CN, Page 23. ]
+
+Here I write down the simplified potential{\footnote{The decompostion of $\phi(\tau)+\delta\phi(\vec x,\tau)$ is used and assume the background $\phi$ only evolves with time $\tau$.}}
+$V(\phi) = \frac{Rf_R - f}{2\kappa^2 (1+f_R)^2}$. Given a explicit model, this will be determined and  may posses order 2 of $\phi$. 
+
+Then variation gives field equation
+\begin{eqn}
+\tilde G_{\mu\nu} = \kappa^2 \tilde T_{\mu\nu} + \frac 12 \tilde \nabla_\mu\phi\tilde \nabla_\nu\phi + \frac 1 2 (\tilde g^{\alpha\gamma}\tilde\nabla_\alpha\phi\tilde \nabla_\gamma \phi)\tilde g_{\mu\nu} - V(\phi)\tilde g_{\mu\nu}
+\end{eqn}
+\begin{quote}
+\begin{quote}
+\begin{eqnset}
+\tilde T_{\mu\nu} = (\tilde \rho + \tilde P) \tilde U_\mu\tilde U_\nu + \tilde p \tilde g_{\mu\nu}   \\
+\tilde U_\mu\equiv e^{\beta\kappa\phi/2} U_\mu \\
+\tilde \rho = e^{-2\beta\kappa\phi}\rho \\
+\tilde p\equiv e^{-2\beta\kappa \phi}p
+\end{eqnset}
+\end{quote}
+\end{quote}
+
+Trace of field equation,
+\begin{eqn}
+G = \kappa^2 T + \frac 12 \tilde g^{\mu\nu}\tilde \nabla_\mu \phi\tilde \nabla_\nu\phi + 2 \tilde g^{\mu\nu}\tilde \nabla_\mu\phi \tilde \nabla_\nu\phi - 4V(\phi)
+\end{eqn}
+\begin{quotation}
+\begin{quotation}
+\begin{eqnset}
+V_\phi\equiv \frac{\mathrm dV}{\mathrm d\phi}
+\end{eqnset}
+\end{quotation}
+\end{quotation}
+
+
+\subsection{Einstein Frame}
+
+\paragraph{Background}
+
+Background equations are
+
+(From conservation equation and Field equation? I didn't derive them myself.)
+\begin{eqnset}
+\phi'' + 2\tilde\HH \phi' + {\tilde a}^2 V_\phi = \frac12 \kappa \beta {\tilde a}^2(\tilde \rho - 3 \tilde p)   \\
+\tilde \rho' + 3\tilde \HH (\tilde \rho + \tilde p) = - \frac12 \kappa \beta \phi' (\tilde \rho - 3\tilde p)
+\end{eqnset}
+
+
+Field equations are
+\begin{eqnset}
+\tilde \HH^2 = \frac13\kappa^2 (\frac12 \phi'^2 + \tilde a^2 V(\phi) + \tilde a^2 \tilde \rho_c + \tilde a^2 \rho_\gamma)     \\
+\phi'' + 2\tilde \HH \phi' + \tilde a^2 V_\phi = \frac 12 \kappa \beta \tilde a^2\tilde \rho_c     \\
+\tilde \rho_c \equiv \tilde \rho_c^* e^{-\kappa\beta\phi/2}   \\
+\tilde \rho_c^* = \tilde \rho^{*0}_c/\tilde a^3
+\end{eqnset}
+
+Since for radiation $\tilde p= \frac{\tilde \rho}{3}${\footnote{This is interesting because we have such transformations: $\tilde\rho\equiv e^{-2\beta\kappa\phi}\rho$ and $\tilde p \equiv e^{-2\beta\kappa\phi}p$. (Also the velocity transformation is $\tilde U_\mu\equiv e^{\beta\kappa\phi/2}U_\mu$ thus we can define a consitent E-M tensor which has the same form as in Jordan frame in Einstein frame.)}}, from conservation equations
+\begin{eqn}
+\tilde\HH'-\tilde\HH^2 = -\frac12 \kappa^2( \phi'^2 + \tilde\rho_c +\frac 4 3 \tilde \rho_\gamma)
+\end{eqn}
+\begin{eqn}
+\tilde \rho_\gamma' + 4\tilde\HH\tilde \rho_\gamma =0
+\end{eqn}
+
+The actual equation for matter is 
+\begin{eqn}
+\tilde \rho_c' +3 \tilde\HH \tilde \rho_c = - Const\cdot \beta \kappa \phi'\tilde\rho_c
+\end{eqn}
+
+
+Unkown variables: $\phi$, $\tilde\HH$, $\tilde \rho_c$, $\tilde\rho_\gamma$, $\tilde p$. These two equations are just some of the complete equation system. We have to use Field equations to form a complete system.
+
+
+[ Defination of $\delta_c$ and $\theta_c$, $\delta_c = \frac{\delta \tilde \rho^*_c}{\tilde \rho^*_c}$.  In \CN, Page 24.] The scalar field is decomposed into $\phi(t) + \delta\phi(\vec x,t)$.
+
+
+\paragraph{Perturbations} Perturbation equations are
+ 
+ \begin{eqnset}
+ \tilde \delta_c'' + \tilde \HH \tilde \delta_c' - \frac 32 \tilde \HH ^2 (2\tilde \Omega_\gamma \tilde \delta_\gamma + \tilde\Omega_c(\tilde\delta_c - \frac 1 2\kappa \beta \delta\phi) + 2\kappa^2 \phi' \delta \phi' -\kappa^2 V_\phi \delta\phi )= 0   \\
+ \delta\phi'' + 2\tilde \HH \delta\phi' + k^2 \delta\phi + \tilde a^2 V_{,\phi\phi} \delta\phi - \phi'\tilde \delta_c' - \frac 32 \frac\beta\kappa \tilde \HH^2 \tilde \Omega_c(\tilde \delta_c - \frac 12 \kappa\beta\delta\phi)  = 0   \\
+ \tilde \delta_\gamma'' + \frac 13k^2\tilde \delta_\gamma -\frac 13 \tilde  \delta_c'' =0
+ \end{eqnset}
+
+And then it is possible to solve these equations since there are only 3 variables unkown, $\tilde\delta_c$, $\tilde \delta_\gamma$, $\tilde \delta\phi$.
+
+Then we can discuss the equations in matter dominated era. In \CN, Page 26. (It is about the attractor point.)
+ 
+\begin{eqnset}
+\tilde \delta_c'' + \frac 32 \frac 1\tau \tilde \delta_c' - 3 \frac 1{\tau^2} (\tilde \delta_c -\frac 12 \kappa \beta\delta\phi) + \frac{2\kappa}{\beta}\frac 1\tau \delta\phi' = 0 \\
+\delta\phi'' + 2\tilde  \HH \delta\phi' + k^2 \delta\phi - \frac{1}{\beta\kappa}\frac1\tau\tilde\delta_c'-\frac{3\beta}{\kappa}\frac{1}{\tau^2}(\tilde \delta_c - \frac 12 \kappa\beta\delta\phi) = 0
+\end{eqnset}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iffalse
+\vspace{5ex}
+\hrule
+\vspace{5ex}
+\begin{equation}
+S=\frac{1}{2\kappa^2} \int \mathrm d^4x\sqrt{-g}[R + f(R)] + \int\mathrm d^4 \sqrt{-g}\mathcal L_{(M)}(x_i,g_{\mu\nu})
+\end{equation}
+Background equations are
+\begin{equation}\left \{ \begin{array}{l}
+(1+r_R)\mathcal H^2 + \frac{a^2}{6}f - \frac{a''}{a}f_R + \mathcal H f_R' = \frac{\kappa^2}{3}a^2\rho \\
+\frac{a''}{a} - (1+f_R)\mathcal H^2 + a^2 \frac{f}{6} + \mathcal H f_R' + \frac{1}{2}f_R'' = -\frac{\kappa^2}{6}a^2(\rho + 3P)
+\end{array} \right. \end{equation}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Perturbation Theory in Jordan Frame}
+
+
+
+
+
+
+\end{document}

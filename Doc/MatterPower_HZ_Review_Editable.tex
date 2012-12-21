@@ -1,0 +1,269 @@
+\documentclass{article}
+
+\usepackage{amsmath,amsthm,amsfonts,amssymb,bm}
+\addtolength{\textheight}{5.0cm}
+\addtolength{\voffset}{-3.5cm}
+\addtolength{\hoffset}{-2.5cm}
+\addtolength{\textwidth}{4.0cm}
+
+\allowdisplaybreaks
+
+\usepackage{subeqnarray}
+\usepackage{mathrsfs}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{url}
+\usepackage{ulem}
+\usepackage{indentfirst}
+%\usepackage{textcomp}
+%\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[hang,small,bf]{caption}
+\setlength{\captionmargin}{50pt}
+
+%includeonly{}
+
+
+\graphicspath{{Figures/}{Figures/CPL/}{Figures/DE/}{Figures/P/}}
+
+
+%\usepackage{tikz}
+%\usetikzlibrary{mindmap,trees}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\hrule\vspace{1pt}\hrule
+\begin{center}
+\mbox{{\bf Matter Power Spectrum \& HZ Prescription}} \\
+\vspace{0.5em}
+\mbox{{Ivan Duran, etc.}}
+\end{center}
+\hrule
+
+
+
+
+\section{Their Ideas}
+%%%%%%%%%%%   Remove this section when publishing unless they have published their paper.      %%%%%%
+
+\subsection{Some Notations}
+
+\begin{itemize}
+
+\item
+\begin{enumerate}
+\item
+$t_0$ stands for current moment.
+\item
+$t_i$ is just the moment of horizon crossing.
+\item
+In this section, $k_e$ is the comoving wavenumber of the perturbation which cross the horizon at equality.
+
+\end{enumerate}
+
+
+\item
+Amplitude of perturbation
+\begin{equation}
+\delta^2(k,t)=\left(\frac{D_+(t)}{D_+(t_0)}\right)^2\frac{k^3}{2\pi^2}P(k)\equiv  \Delta(k,t)
+\end{equation}
+
+where $P(k)$ is the initial power spectrum.
+
+\item
+Growth factor;
+
+\paragraph{Defination}  \begin{equation}
+D_+(a)=\frac{5\Omega_{m0}}{2}H(a)H_0^2\int_0^a \frac{1}{a'^3H(a')^3}\mathrm da'
+\end{equation}
+
+\paragraph{Properties}
+Since we are only going to use the ratio of growth factors, the properties of the ratio should be examined.
+
+\begin{quote}
+Before this, we have to calculate the Hubble function.
+\paragraph{Hubble Function}\begin{equation}
+H(a)=H_0 \sqrt{\Omega_{m0}a^{-3}+\Omega_{r0}a^{-4}+\Omega_{DE0}a^{-3(1+w)}}
+\end{equation}
+\end{quote}
+
+\begin{equation}
+D_+(t)=
+\begin{cases}
+D_+(t_i)(t/t_i)^{2/3} & t_e<t_i<t_{e2} \\
+D_+(t_i)=\text{Const.} & t_i<t_e
+\end{cases}
+\end{equation}
+
+
+
+\item
+Crossing the particle horizon,
+\begin{equation}
+\lambda(t_i)a(t_i)=d_H(t_i)
+\end{equation}
+
+Hubble distance is $d_H(t)\sim t$.
+%%%%%%%%     footnote          %%%%%%%%%%%%
+\footnote{
+Hubble distance is
+\begin{equation}
+d_H(t)=c\frac{a}{\dot a}
+\begin{cases}
+c\sqrt{t}/\dot{\sqrt{t}}  & \text{radiation domination} \\
+c t^{2/3}/\dot{t^{2/3}} & \text{matter domination}
+\end{cases}
+\end{equation}
+I have done the cal. under any $w$, but I do not remember the results.
+} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+During matter domination, we have $a(t)\sim t^{2/3}$.  Thus, \begin{equation}\lambda=d_H(t_i)/a(t_i)\sim t^{1/3}.\end{equation}
+Finally, since $\lambda(t)=2\pi /k(t)$, we get
+\begin{equation}
+k_i^3t_i=\text{Const.}=k_e^3t_e .
+\end{equation}
+
+
+\end{itemize}
+
+\subsection{Determine when the perturbations came into horizon.}
+Out of the prescription, we can determine when does the perturbations come into the horizon.
+
+\begin{enumerate}
+\item
+$t_i>>t_e$, i.e., come into horizon at matter dominated era.
+\begin{eqnarray}
+\Delta(k_e,t_0)&=&D_+^2(t_e,t_0)\Delta(k_e,t_e)=D_+^2(t_e,t_0)\Delta(k_i,t_i)=\frac{D_+^2(t_e,t_0)}{D_+^2(t_i,t_0)}\Delta(k_i,t_0) \\
+&=&\bigg[\frac{a(t_0)/a(t_e)}{a(t_0)/a(t_i)}\bigg]^2\Delta(k_i,t_0)=\bigg[ \frac{a(t_i)}{a(t_e)} \bigg]^2\Delta(k_i,t_0)=\bigg[ \frac{t_i^{2/3}}{t_e^{2/3}} \bigg]^2\Delta(k_i,t_0) \\
+&=&\frac{k_e^4}{k_i^4}\Delta(k_i,t_0) \\
+\Rightarrow  \nonumber \\ 
+P(k_i,t_0)&=&(k_i/k_e)P(k_e,t_0)
+\end{eqnarray}
+
+
+
+\item
+$t_i<<t_e$
+
+\begin{equation}
+P(k_i,t_0)=(k_i/k_e)^{-3}P(k_e,t_0)
+\end{equation}
+
+\end{enumerate}
+
+
+
+
+
+
+\subsection{Two different models diverge at later ages}
+
+Two models
+\begin{enumerate}
+\item $\Lambda$CDM
+\item DE
+\end{enumerate}
+
+
+
+Assumptions,
+\begin{itemize}
+\item  DE do not cluster [?]
+\item  During RD, perturbations evolve like a $\Lambda$CDM universe that has the same redshift of MR equality.
+\item  model 1 and model 2 has the same initial perturbation amplitude.
+\end{itemize}
+
+
+
+
+
+Though two models has the same initial perturbations, the growth of them are different.
+
+Since we have HZ, the power spectrum only diverge after equality, even more later when the transfer function becomes 1.
+
+
+
+
+
+
+\subsection{More}
+
+\begin{itemize}
+
+\item
+
+[P] The HZP is not so accurate. It is calculated that the potential perturbation drops to about 9/10 (this may change in other models) of its value.
+
+[S] We do not need a too acurate calculation.
+
+\item
+
+[P] The factor $Q$ is not only determined by the growth factor. Actually, this should be
+\begin{equation}
+Q^2(k_{in},t_0,t^X_{in},t^{\Lambda}_{in})=\frac{D^2_X(t^X_{in},t_0)}{D^2_{\Lambda}(t^{\Lambda}_{in},t_0)}\cdot\frac{T^2_X(k_{in})}{T^2_{\Lambda}(k_{in})}\qquad=\frac{P_X(k_{in},t_0)}{P_{\Lambda}(k_{in},t_0)}
+\end{equation}
+The subscript $\Lambda$ mean these terms stand for $\Lambda$CDM model.
+
+
+In their method, $P(k)=Ak^nT^2(k)$, is the $k$ dependent part of the whole power sepctrum. So when calculating the fiducial $\Lambda$CDM model, two parts have to be calculated seperately, the whole power spectrum $P(k,t)$ and the growth factor $D_+(t,t_0)$ or identically, the $k$ dependent part $P(k)$ and the growth factor. 
+
+Then for other models, we have only to calculate the growth factor to determine the growth for a particular mode and the transfer function for the variation of different modes, which employs the $P_X(k)=Q^2P_{\Lambda CDM}(k)$ to generate the power spectrum for the new models.
+
+[S] \label{TransferFunctionSame} The two models have the same evolution at about radiation era and the early time of matter domination. Then the transfer function must be about the same.
+
+To see this clearly, take a look at the Hubble function,
+\begin{equation}
+H^2=H_0^2(\Omega_{M0}a^{-3}+\Omega_{R0}a^{-4}+\Omega_{DE0}a^{-3(1+w)}+\Omega_{K0}a^{-2})
+\end{equation}
+Since $w$ is about the value of -1 and different DE models do not change the values of $\Omega_{M0}$ and $\Omega_{R0}$ very much, the Hubble function do not change very much from different models at about equality which is located at about $a\sim 10^{-3}$.
+
+This is an example of the evolution of the background. Generally, the perturbation growth  does not vary very much from different models.(?){\footnote{Need proof. I just think, no proof referred.}}
+
+\item
+
+[P] One important thing before calculating the power spectrum, is to set the background of the two models to be the same.
+
+There are severals things to concern.
+\begin{enumerate}
+\item
+The background Hubble function which intends to pass the SN redshift exp. and samiliar receding exp. 
+
+\item
+The CMB temperature today. 
+Since the total energy density is determined by the temperature if we assume the radiation today is a black body one, same temperature means the density of radiation is the same in the two models. 
+From the first item, the Hubble function is the same. This doesn't mean the scale factor $a$ is the same. But there is no way to write the density of the radiation to Hubble function rather than the scale factor (see Friedmann equation for an example). So this is really annoying.\footnote{There is one special circumstance that the the scale factors and the first derivative of them are the same in two models. In this case, the radiation density at LSS should be the same since we in this special case the scale factors $a$ are the same in the two models to insure they have the same background. 
+
+If we think about things happended before decoupling, the Hubble function is mainly dominated by radiation, or even just photons. Then we can set all thing to be the same during radiation era. This is roughly the assumption used by Ivan, Fernando and Diego (the evolution of the perturbations in X model is the same with a corresponding $\Lambda$CDM model).
+Growth factor is related to the ratio of matter energy density (might be related to the constituents of the universe) and the scale factor and the Hubble function. Then the growth of the perturbations diverges in different models because of the late effect of the different ratio of matter etc. }
+
+%I do not know if I can use this colon in this way.%
+\end{enumerate}
+
+\end{itemize}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
