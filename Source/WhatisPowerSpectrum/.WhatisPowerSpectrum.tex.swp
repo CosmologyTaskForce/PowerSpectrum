@@ -1,0 +1,257 @@
+% !TEX program = xelatex
+
+%This document had would had been used on Ways to Singularity, which is a website that supports MathJax. So some html elements may occur in this document. DELETE THIS when publishing. (If you are not very clear on the grammar I used here, read the academic publication called Time Traveller's Handbook of 1001 Tense Formations by Dr Dan Streetmentioner, which had would had been publish in year 220010 of Gregorian Calendar.)
+
+\documentclass[12pt,a4paper]{book}
+
+\usepackage{amsthm,amsfonts,amssymb,bm}
+\usepackage{mathrsfs}
+\usepackage[fleqn]{amsmath}
+
+% Page settings
+\addtolength{\textheight}{2.0cm}
+\addtolength{\voffset}{-2cm}
+\addtolength{\hoffset}{-1.0cm}
+\addtolength{\textwidth}{2.0cm}
+
+%\allowdisplaybreaks
+
+\usepackage{subeqnarray}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{url}
+\usepackage{ulem}
+\usepackage{indentfirst}   % Indent first line of a paragraph
+%\usepackage{textcomp}
+
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+\usepackage[hang,small,bf]{caption}
+\setlength{\captionmargin}{50pt}
+
+
+%%Here is the configuration for chinese. setmainfont is the default font of the text.
+\usepackage[cm-default]{fontspec}
+\usepackage{xunicode}
+%\usepackage{xltxtra}
+\setmainfont{Arial}
+%\setsansfont[BoldFont=Arial]{KaiTi_GB2312}
+%\setmonofont{NSimSun}
+
+
+
+
+%\XeTeXlinebreaklocale "zh"
+%\XeTeXlinebreakskip = 0pt plus 1pt
+
+% Figure, Diagram, Caption settings
+%\usepackage{tikz}
+%\usetikzlibrary{mindmap,trees}
+\usepackage{graphicx}
+%\usepackage{graphics}
+%\usepackage[hang,small,bf]{caption}
+%\setlength{\captionmargin}{50pt}
+
+% Redefine some fonts.
+%\newfontfamily\heiti{"黑体"}
+%\newfontfamily\fs{"仿宋"}
+%\newfontfamily\yahei{"微软雅黑"}
+
+
+%\usepackage{tikz}
+%\usetikzlibrary{mindmap,trees}
+
+
+%includeonly{}
+
+
+\graphicspath{{Figures/}{Figures/CPL/}{Figures/DE/}{Figures/P/}}
+
+
+\begin{document}
+\title{Power Spectrum \\ (\textbf{In Progress})}
+\author{{\bf MA} Lei  \\
+@ Interplanetary Immigration Agency \\
+{\small\em \copyright \ Draft date \today}}
+\date{}
+%\begin{document}
+\maketitle
+
+% Redefine some math commands and environments.
+
+\newcommand{\dd}{\mathrm d}
+%\newcommand{\HH}{\mathcal H}
+%\newcommand{\CN}{{\it Cosmologia Notebook}}
+\newenvironment{eqnset}
+{\begin{equation}\left \bracevert \begin{array}{l}}
+{\end{array} \right. \end{equation}}
+
+\newenvironment{eqn}
+{\begin{equation}\left \bracevert \begin{array}{l}}
+{\end{array} \right. \end{equation}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%    Let's Start Typing     %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%    Why power spectra     %%%%%%%%%%
+
+
+\section{Why power spectra}
+
+In astronomical observations, we observe the properties of objects and their distribution. After we gain these data, we shoud process the data carerfully.
+
+Distributions are always processed in view of power spectrum because power spectrum gives us the two-point function in Fourier space and this makes it possible to evaluate the distribution in terms of modes. For example, power spectrum is often defined as
+\begin{equation}
+\langle \tilde \delta (\vec k) \tilde \delta (\vec k') \rangle = (2\pi)^3 P(k) \delta^3(\vec k - \vec k')
+\end{equation}
+in which $\tilde\delta$ is the Fourier transform of $\delta(\vec k) = (n(\vec k) - \bar n)/\bar n$, i.e., density perturbation. $\delta^3(\vec k - \vec k')$ is Dirac function. In this defination, we can see the distribution of different modes in Fourier space. Modes are easily understood because they are plane waves here.
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%    What is Power Spectra     %%%%%%%%%%
+\section{What is Power Spectra}
+
+In mathematics, power is the square of the coefficients in a Fourier transform with some constants multiplied to them. This is more explicit in a discrete transform. 
+
+The matter perturbation power spectrum reads
+\begin{equation}
+\langle \tilde \delta (\vec k) \tilde \delta (\vec k') \rangle = (2\pi)^3 P(\vec k) \delta^3(\vec k - \vec k')
+\end{equation}
+in which $\tilde\delta$ is the Fourier transform of $\delta(\vec k) = (\rho(\vec k) - \bar \rho)/\bar \rho$. and $\rho$ is the relative density of matter. Here at the left is the virance of $\tilde \delta(\vec k)$ which generally means
+\begin{equation}
+\lim _ {T\rightarrow\infty} \frac 1{2T} \int_{-T}^T\tilde \delta(t) \tilde \delta(t+\tau) dt.
+\end{equation}
+
+In the regime of matter power spectrum, we often use the form
+\begin{equation}
+P(k)=\frac{2\pi^2}{k^3}\delta(k)^2
+\end{equation}
+
+The $2\pi^2$ comes from an integral over all the directions of $\vec k$, that is $P(k) = 4\pi  P(\vec k)$.
+
+
+
+
+
+
+
+
+
+%%%%%%%%  How to Calculate Power Spectra   %%%%%%%%%%
+\section{How to Calculate Power Spectra}
+
+
+When it comes to the calculation of the power spectrum, we have to find the equation for density evolution in Fourier space. To achieve this, we have to apply Einstein's field equation to the whole universe and the Fourier transform.
+
+
+\subsection{Background}
+
+In a FRW universe, the Friedmann equation and acceleration equation which describes the evolution of the background universe is
+\begin{eqnarray}
+	3(\dot a^2 + k)/ a^2 &=& 8\pi G \sum_i \rho_i \\
+	2\ddot a/a + (\dot a^2 + k)/a^2 &=&-8\pi G \sum_i p_i
+\end{eqnarray}
+
+In our harmonic model, $\sum_i \rho_i \approx \rho_r + \rho_m + \rho_d$, the lower index $r$ means radiation, $m$ means matter and $d$ stands for dark energy. Moreover, we often define a critical density $\rho_c = \frac{3H_0^2}{8\pi G}$ which is the density that leads to $H=H_0$. Using this critical density, we can define the density fraction $\Omega_i = \frac{\rho_i}{\rho_c}$. Also the Hubble equation $H(a)$ is $H(a) = \dot a/a$.
+
+Since we have strong evidence that $k=0$, the early universe can be roughly described by
+\begin{eqnarray}
+	3 H(a)^2 &=& 8\pi G (\rho_r + \rho_m) \\
+	2 \ddot a/a + H(a)^2 &=& -8\pi G (p_r + p_m)
+\end{eqnarray}
+
+When the universe comes into the matter dominated era, the equations can be reduced to
+\begin{eqnarray}
+	3 H(a)^2 &=& 8\pi G (\rho_m + \rho_d) \\
+	2\ddot a/a + H(a)^2 &=& -8\pi G (p_d + p_m)
+\end{eqnarray}
+
+To solve the equaiton, we have to find out the pressure of different species.
+
+For baryonic matter, the pressure is essentially zero while for photonic gas, the pressure is $p_r = -4 \rho_r$.
+It is more complicated to determine dark energy's equation of state, so we have to put it aside or just denote it with $w$.
+
+Now what are some possible forms of $w$? Two families are often used, i.e.,
+\begin{itemize}
+	\item [1]
+\begin{equation}
+w(z) = w_0 + w_1 (\frac{z}{1+z})^n
+\end{equation}
+	\item [2]
+\begin{equation}
+w(z) = w_0 + w_1 \frac{z}{(1+z)^n}
+\end{equation}
+\end{itemize}
+
+
+\subsection{Perturbation}
+
+There is a gauge problem in this perturbation formalism. But first of all, we have to know what the gauge problem is.
+
+It is easy start point to ignore the gauge problem and use the so called Newtonian gauge to calculate the power spectrum. But 
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%  Harrison-Zeldovich Prescription   %%%%%%%%%%
+\section{Harrison-Zeldovich Prescription}
+
+
+
+
+
+
+%%%%%%%%  Evolution of Power Spectra With HZ Prescription   %%%%%%%%%%
+\section{Evolution of Power Spectra With HZ Prescription}
+
+
+
+
+
+%%%%%%%%  Models and Parameters   %%%%%%%%%%
+\section{Models and Parameters}
+
+
+
+
+%%%%%%%%  Transitions   %%%%%%%%%%
+\section{Transitions}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

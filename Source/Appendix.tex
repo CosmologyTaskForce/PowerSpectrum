@@ -1,0 +1,104 @@
+
+
+\section{Appendix}
+
+\subsection{Growth Factor Revisited}
+
+In this part, prime (') stands for the derivative with time $t$, over dot stands for the derivative with scale factor $a$.
+
+Use Navier Stokes equations for matter (with pressure $p=0$) as the basic equation set. {\footnote{{\it Cosmology Project} Notebook}}
+
+Using $\delta_m=\frac{\rho_m-\bar\rho_m}{\bar\rho_m}$, the equations become
+\begin{eqnarray}
+\frac{\partial {\delta_m}}{\partial t}+a^{-1}\vec{v}_m\cdot \delta_m &=& -a^{-1}(1+\delta_m)\nabla\cdot\vec{v}_m \\
+\frac{\partial \vec{v}_m}{\partial t}+ a^{-1}(\vec{v}_m\cdot \nabla)\vec v_m &=& -\frac{\nabla\Phi}{a}-H\vec v_m \\
+a^{-2}\nabla^2\Phi &=& 4\pi G\bar\rho_m\delta_m
+\end{eqnarray}
+
+In these equations, $\Phi$ is the gravitational potential.
+
+This is too complex to solve. So we only use the linear approximation,that is, no second or higher order of $\delta_m$, $\vec v_m$, $\Phi$ appear, because we already use those as perturbations.
+Finally,
+\begin{eqnarray}
+\frac{\partial {\delta_m}}{\partial t}&=&-a^{-1}\nabla \cdot\vec{v}_m \\
+\frac{\partial \vec{v}_m}{\partial t}&=& -\frac{\nabla\Phi}{a}-H\vec v_m \\
+a^{-2}\nabla^2\Phi &=& 4\pi G\bar\rho_m\delta_m
+\end{eqnarray}
+
+Easily, one can use the well known trick for this kind of equations to find the second derivative equation for $\delta_m$, or the basic function for this problem,
+\begin{eqnarray}
+\delta_{m}''+2H\delta_m'-4\pi G \bar\rho_m \delta_m=0
+\end{eqnarray}
+
+However, we usually use scale factor $a$ as a measurement of time. Thus we would transform it the following form
+\begin{equation}
+\ddot \delta_m+(\frac{\mathrm d\ln{H}}{\mathrm da}+\frac{3}{a})-\frac{3\Omega_{m0}H_0^2}{2a^5H^2}\delta_m =0
+\end{equation}
+
+Almost each book of ODE will tell us how to solve such an equation.
+
+After a little work, we will get two special solutions:
+\begin{eqnarray}
+\delta_{m,1}&=&H \\
+\delta_{m,2}&=&H\int^a_0 \frac1{a'^3H(a')^3}\mathrm d a'
+\end{eqnarray}
+
+General solution is
+\begin{equation}
+\delta_m=C_1 H+C H\int^a_0 \frac{1}{a'^3H(a')^3}\mathrm da'
+\end{equation}
+
+Since $H$ is decaying, drop $C_1 H$, then
+\begin{equation}
+\delta_m=C H\int^a_0 \frac{1}{a'^3H(a')^3}\mathrm da'
+\end{equation}
+
+Apply initial condition $\delta_m(a_{i})=\delta_{i}$
+\begin{equation}
+C=\frac{\delta_i}{H(a_i)}\frac{1}{\int^{a_i}_0\frac{1}{a'^3H(a')^3}}\mathrm d a'
+\end{equation}
+
+To simplify these expressions, we now define $D_+=\frac 5 2 \Omega_{m0} H(a) \int^a_0\frac{1}{a'^3H(a')^3}\mathrm d a'$. (One might be confused with this defination at first. The constant multiplied the the original part is to ensure one condition: at matter domination,$D_+$ is $a$. This condition endow $D_+$ with more physics.) Then 
+\begin{equation}
+C=\delta_i \frac {5\Omega_{m0}H_0^2}{2} \frac1{D_+(a_i)}
+\end{equation}
+
+With this, we have
+\begin{equation}
+\delta_m(a)=\delta_i \frac{D_+(a)}{D_+(a_i)}
+\end{equation}
+
+Actually, this $D_+(a)$ is a growing mode of the equation, and we all call it growth factor.
+
+
+
+
+\subsection{CPL}
+
+\subsubsection{Equation of State}
+
+\begin{equation}
+w(a)=w_0+w_a(1-a)=w_0+w_a\frac{z}{1+z}
+\end{equation}
+
+
+\subsubsection{Hubble Function}
+
+By solving the Friedmann equation using the CPL parameterisation, the contribution to the background of CPL dark energy is $\Omega_{de0}a^{-3(1+w_0+w_a)}e^{-3w_a(1-a)}$.
+
+Thus the Hubble function should be
+\begin{equation}
+H(a)=H_0\sqrt{\Omega_{m0}a^{-3}+\Omega_{r0}a^{-4}+\Omega_{de0}a^{-3(1+w_0+w_a)}e^{-3w_a(1-a)}}
+\end{equation}
+
+
+The Taylor series of dark energy contribution is
+\begin{equation}
+a^{-3(1+w_a+w_0)}e^{-3w_a(1-a)}=1+3(1+w_0)(a-1)+\frac 3 2 (4+w_a+7w_0+3w_0^2)(1-a)^2+...\label{eq:CPL_HubbleEquation_Series}
+\end{equation}
+
+To create a mimic of LCDM at low redshift, $w_0\rightarrow 0$ should be satisfied. To make a more rigorous condition, $w_a$ should be much smaller than 1 for this cancels the contribution of $z^2$ term once $w_0=-1$.
+
+
+In order to generate a background similar to LCDM, the parameters should carefully chosen according to the criteria that $w_0\rightarrow 0$ and $w_a\rightarrow 0$.
+

@@ -1,0 +1,206 @@
+\documentclass{article}
+
+\usepackage{amsmath,amsthm,amsfonts,amssymb,bm}
+\addtolength{\textheight}{5.0cm}
+\addtolength{\voffset}{-3.5cm}
+\addtolength{\hoffset}{-2.5cm}
+\addtolength{\textwidth}{5.0cm}
+
+\allowdisplaybreaks
+
+\usepackage{subeqnarray}
+\usepackage{mathrsfs}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{url}
+\usepackage{ulem}
+\usepackage{indentfirst}
+%\usepackage{textcomp}
+%\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[hang,small,bf]{caption}
+\setlength{\captionmargin}{50pt}
+
+%includeonly{}
+
+
+\graphicspath{{Figures/}{Figures/CPL/}{Figures/DE/}{Figures/P/}}
+
+
+%\usepackage{tikz}
+%\usetikzlibrary{mindmap,trees}
+
+\begin{document}
+\title{Power Spctrum \& Its Evolution}
+\author{MA Lei}
+\maketitle
+
+
+%%%%Inclule thse files please.%%%
+
+
+
+\include{WhatisPowerSpectrum}
+
+\include{HarrasionZeldovichPrescription}
+\include{MatterPower_HZ_Review}
+\include{WhatDoWeExpect}
+\include{Work}
+\include{Appendix}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%Actually, this subsection "Supplements2" is a part of chapter "Work". After this is finished, add it to "Work".
+
+\begin{quotation}
+{\color{JungleGreen}
+\subsection{Second Supplements}
+
+
+\subsubsection{To Think More}
+
+\begin{enumerate}
+
+\item
+A little dimensional analysis is shown here, in case of future mistakes.
+\begin{enumerate}
+\item
+Hubble constant, $H_0$ carries the dimension of $[Time]^{-1}$
+\item
+Gravitational constant, $G$ carries the dimension of $[Length]^3/[Mass][Time]^2$
+\item
+Speed of light in vacuum, $c$ of course, has the dimension of $[Length]/[Time]$
+
+\end{enumerate}
+
+
+\item
+Large $k$ corresponds to the future. Besides, large $k$ should have the same amplitude because they have not come inside the horizon.
+
+\item
+What's more, the comoving horizon becomes constant in the far future.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=350pt]{HubbleDistanceOfLCDM_Marked.eps}
+\caption{\color{JungleGreen}Hubble distance of LCDM model. The dashed vertical line is zero redshift.}\label{fig:DE_Supp_HubbleDistances}
+\end{figure}
+
+This simply means there are perturbations that will never come into the horizon.
+
+To calculate the power spectrum, one should cut the growth functions at $z=0$ and set the matter perturbation the same then calculate on. Since these are outside of the horizon, today's power spectrum seems weird.
+
+\item
+The power spectrum calculated by me is the power of today. However, observations certainly won't get the power spectrum of the present day. On large scales, the distribution of matter is the in the state of earlier ages.
+
+In paper {\bf Matter power spectrum from the Lyman-alpha forest: myth or reality?} ({\it Mon. Not. R. Astron. Soc. 334, 107-116, 2002}) calculated the distribution of matter at $z=2.72$. This paper also assumed that the underlying baryon density follows that of dark matter (their reference is Croft et al, 2001, astro-ph/0012324).
+
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{quotation}
+
+
+
+
+
+
+
+
+
+\subsection{Including DM-DE perturbation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Todo List}
+\begin{itemize}
+\item
+\sout{Find all the growth factors if they are useful.}
+\item
+\sout{Calculate the fiducial power spectrum.}
+
+\item
+\sout{The spectrum is normalised to be the same at $a\sim 0$. So that the $\sigma_8$ of different models are the same.}
+
+\item
+Switch from adiabatic initial condition to isocurvature initial condition will change the expression of growth factors (changing the power of H), thus leading to different results.
+
+\item
+Introduce interacting between dark energy and dark matter.
+
+\item
+Other quantities in cosmology? Can one generalise this method to more calculations?
+
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\include{Appendix}
+
+
+
+
+
+\end{document}
