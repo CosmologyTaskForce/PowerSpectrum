@@ -69,6 +69,7 @@
 \graphicspath{{Figures/}{Figures/CPL/}{Figures/DE/}{Figures/P/}}
 
 
+\usepackage{amsmath}
 \begin{document}
 \title{Power Spectrum \\ (\textbf{In Progress})}
 \author{{\bf MA} Lei  \\
@@ -160,6 +161,27 @@ When it comes to the calculation of the power spectrum, we have to find the equa
 
 \subsection{Background}
 
+
+Metric for flat FRW universe
+\begin{equation}
+\bf{\bar g} = 
+\begin{pmatrix}
+-1 & 0 & 0 & 0 \\
+0 & a^2 & 0 & 0 \\
+0 & 0 & a^2 & 0 \\
+0&0&0& a^2
+\end{pmatrix}
+\end{equation}
+
+Energy momentum tensor is also needed,
+\begin{equation}
+	T_{\mu\nu} = (\rho + p)u_\mu u_\nu + p g_{\mu\nu}
+\end{equation}
+
+
+
+
+
 In a FRW universe, the Friedmann equation and acceleration equation which describes the evolution of the background universe is
 \begin{eqnarray}
 	3(\dot a^2 + k)/ a^2 &=& 8\pi G \sum_i \rho_i \\
@@ -188,6 +210,7 @@ It is more complicated to determine dark energy's equation of state, so we have 
 Now what are some possible forms of $w$? Two families are often used, i.e.,
 \begin{itemize}
 	\item [1]
+	Redshift is $z=\frac{1- a}{a}$.
 \begin{equation}
 w(z) = w_0 + w_1 (\frac{z}{1+z})^n
 \end{equation}
@@ -198,12 +221,144 @@ w(z) = w_0 + w_1 \frac{z}{(1+z)^n}
 \end{itemize}
 
 
+
+
+
+
+
 \subsection{Perturbation}
 
-Cosmological perturbation theory is quite straight forward at first glance. Just find the 
+Cosmological perturbation theory is quite straight forward at first glance. Just find the perturbation of metric and energy momentum tensor and put them together into Einstein's field equation. But, there is a gauge problem in this perturbation formalism. And before we come to the problem, gauge transformation has to be explained.
 
-There is a gauge problem in this perturbation formalism. It is easier to start from to ignore the gauge problem and use the so called Newtonian gauge to calculate the power spectrum. But first of all, we have to know what the gauge problem is.
+It is easier to start from ignoring the gauge problem and use the so called Conformal Newtonian gauge to calculate the perturbation.
 
+In this case, the metric is 
+\begin{equation}
+\bf{g} =
+\begin{pmatrix}
+	-1-2\Psi(\vec x, t) & 0 & 0 & 0\\
+	0 & a^2(1 +  2\Phi(\vec x,t)) & 0 & 0\\
+	0 & 0 & a^2(1 +  2\Phi(\vec x,t)) & 0\\
+	0 & 0 & 0 & a^2(1 +  2\Phi(\vec x,t))\\
+\end{pmatrix}\label{eq-per-metric}
+\end{equation}
+
+$\Psi(\vec x,t)$ is the Newtonian potential in a weak field. If you are familar with Schwarzschild spacetime, you can see this imidiately. If we start form the weak field approximation, field equation is $\partial_\lambda \partial^\lambda \phi^{\mu\nu} = 0$. For a static field, this is $\nabla^2 \phi^{\mu\nu} = 0$. The radial sulotion of this equaiton, is Newtonian potential, that is 00 component of the metric is $-2GM/r$. $\Phi(\vec x,t)$ is the perturbation to space.
+
+Here is the problem. In \ref{eq-per-metric}, $\Phi$ and $\Psi$ relies on the the choice of a coordinate system, which means we choose some kind of threading and slicing of spacetime. When we choose another coordinate system, the equations may change under this coordinate transformation. Now we see this is a bad formalism, even in harmonic analysis. Harmonic analysis is our first mathematics excerse before we start to deal with the gauge invariant perturbation. Let's see it.
+
+\subsubsection{Harmonic Analysis}
+
+For vector $V_i$ and rank 2 tensor $H_{ij}$, we can always write them into certain parts.
+\begin{eqnarray}
+	V_i &=& \nabla_i \phi + B_i\\
+	H_{ij} &=& H_L \gamma_{ij} + \left(\nabla_i\nabla_j - \frac{1}{3}\Delta\gamma_{ij}\right) H_{T} + \frac{1}{2}\left(H^{(V)}_{i|j} + H^{(V)}_{j|i} \right) + H^{(T)}_{ij}
+\end{eqnarray}
+Some properties of the quantities above are
+\begin{eqnarray}
+	B^i_{|i}=0, &&\qquad\text{transverse} \\
+	H^{(V)|i}_i = 0, &&\qquad\text{transverse} \\
+	H^{(T)i}_i = 0,&&\qquad \text{traceless} \\
+	H^{(T)j}_{i|j} = 0, &&\qquad \text{transverse} \\
+	H_L, H_T  &&\qquad \text{spin-0 part} \\
+	H^{(V)}_i  	&&\qquad \text{spin-1 part} \\
+	H^{(T)}_{ij}, &&\qquad \text{spin-2 part}
+\end{eqnarray}
+
+
+If scalar modes are the only concern, we can drop vector and tensor modes because scalar, vector and tensor modes evolve independently.
+
+
+For scalar variables, harmonic analysis is done on basis $e^{i\vec k\cdot \vec x}$. But it requires a spherical harmonic $Y$ if we need to expand scalars in on the surface fo a sphere. Since spherical harmonic $Y$ can be reduced to Fourier basis at some limits, we would perform the harmonic analysis using $Y$, with $k^2=l(l+2)$.
+
+
+We can expand all scalar mode variables here on spherical harmonic Y, eigenfunctions of Laplacian $(\Delta + k^2) Y =0$, and its gradients $Y_{j}\equiv -k^{-1} Y_{|j}$ and $Y_{ij}\equiv k^{-2}Y_{|ij} +\frac13\gamma_{ij}Y$, if we do not deal with vector and tensor modes. That is
+\begin{eqnarray}
+	V_i &=& V Y_i \\
+	H_{ij} &=& H_L \gamma_{ij} Y + H_T Y_{ij}
+\end{eqnarray}
+
+
+
+
+
+The metric and its perturbation becomes
+\begin{eqnarray}
+\tilde g_{00} &=&	-a^2( 1 + 2 A Y) \\
+\tilde g_{0j} &=& -a^2 B Y_j \\
+\tilde g_{ij} &=& a^2(\gamma_{ij} + 2 H_L Y \gamma_{ij} + 2 H_T Y_{ij})
+\end{eqnarray}
+
+Inverse of it
+\begin{eqnarray}
+\tilde g^{00}&=& -a^{-2}(1-2A Y) \\
+\tilde g^{0j}&=& -a^{-2} B Y^i \\
+\tilde g^{ij}&=& a^{-2}(\gamma^{ij}-2H_L Y \gamma^{ij}-2H_T Y^{ij} )
+\end{eqnarray}
+
+
+We also have energy momentum tensor to expand. Suppose we have perfect fluid as the source of gravity. First rule, we always talk about rest observers. Since energy momentum tensor is related to observers, we have to evaluate this tensor by velocity.
+\begin{eqnarray}
+	\tilde T^\mu_\nu \tilde u^\nu &=& -\tilde \rho \tilde u^\mu \\
+	\tilde u_\mu \tilde u^\mu &=& -1
+\end{eqnarray}
+
+A careful calculation shows 
+\begin{eqnarray}
+T^0_{\phantom 0 0} &=& -\rho (1+\delta Y)  \\\
+T^0_{\phantom 0j } &=& (\rho + p )(v-B)Y_j \\
+T^j_{\phantom j0 }&=& -(\rho + p) v Y^j \\
+T^{i}_{\phantom i j} &=& p(\delta^i_j + \pi_L \delta^i_j Y +\pi_T Y^i_j)
+\end{eqnarray}
+
+
+
+
+
+
+
+
+\subsubsection{Gauge Transformation}
+
+The second math excerse is gauge transformation.
+
+Gauge transformation here is infinitesimal coordination transformation from the view of coordinate transformation, or more precisely, the Lie derivitive along some vector $X=T\partial_t+L^i\partial_i$. To be simple, we start from infinitesimal coordinate transformation,
+\begin{eqnarray}
+	\bar\eta &=& \eta + T(\eta) Y \\
+	\bar x^j &=& x^j + L(\eta) Y^j
+\end{eqnarray}
+
+Then metric transforms like
+\begin{eqnarray}
+	\bar{\tilde g} _{\mu\nu}(\eta,x^j) &=& \frac{\partial x^\alpha}{\partial{\bar x^\mu}} \frac{\partial x^\beta }{\partial x^\nu} \tilde g_{\alpha\beta}(\eta-T Y, x^j - L Y^j)  \\
+	&=& \tilde g_{\mu\nu}(\eta,x^j) + g_{\alpha\nu}\delta x^\alpha_{\phantom\alpha,\mu} + g_{\alpha\mu}\delta x^{\alpha}_{\phantom \alpha,\nu} - g_{\mu\nu,\lambda}\delta x^\lambda
+\end{eqnarray}
+
+
+Put everything (perturbated metric and the gauge transformation) in, we can find out that
+\begin{eqnarray}
+	\bar A&=& A- T' - (a'/a)T \\
+	\bar B&=& B+L' + k T \\
+	\bar H_L &=& H_L - (k/n) L - (a'/a)T \\
+	\bar H_T &=& H_T + k L 
+\end{eqnarray}
+
+Transformation for energy momentum tensor
+\begin{eqnarray}
+	\bar v &=& v +L' \\
+	\bar{\tilde \rho}(\eta) &=& \tilde \rho(\eta) - \rho' T Y \\
+	\bar \delta &=& \delta + n(1+w)(a'/a) T   \\
+	\bar \pi_L &=& \pi_L + \frac{c_s^2}{w} n(1+w)\frac{a'}{a} T \\
+	\bar \pi_T &=& \pi_T
+\end{eqnarray}
+
+The sound speed is $c_s^2\equiv \dot p/\dot \rho$.
+
+See that? Our formalism is not invariant under such gauge transformations. Thus our task is to find out gauge invariant variables and use them to do the theoretical calculation.
+
+
+
+\subsubsection{}
 
 
 
